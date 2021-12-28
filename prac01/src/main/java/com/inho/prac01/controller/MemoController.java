@@ -19,7 +19,7 @@ public class MemoController {
     public Memo createMemo(@RequestBody MemoRequestDto requestDto) {
         Memo memo = new Memo(requestDto);
         return memoRepository.save(memo);
-    }
+    }   
 
     @GetMapping("/api/memos")
     public List<Memo> readMemo() {
