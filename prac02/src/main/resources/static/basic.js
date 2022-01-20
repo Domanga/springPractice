@@ -41,7 +41,7 @@ function showProduct() {
         url: '/api/products',
         success: function (response) {
             $('#product-container').empty();
-           // $('#search-result-box').empty();
+            $('#search-result-box').empty();
             for (let i = 0; i < response.length; i++) {
                 let product = response[i];
                 let tempHtml = addProductItem(product);
