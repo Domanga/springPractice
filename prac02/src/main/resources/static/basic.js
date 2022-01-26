@@ -62,13 +62,13 @@ function addProductItem(product) {
                         ${product.title}
                     </div>
                     <div class="lprice">
-                        <span>${numberWithCommas(product.lprice)}</span>원
+                        <span>${product.lprice}</span>원
                     </div>
                     <div class="isgood ${product.lprice > product.myprice ? 'none' : ''}">
                         최저가
                     </div>
                 </div>
-            </div>`;
+            </div>`
 }
 
 function numberWithCommas(x) {
