@@ -1,5 +1,6 @@
 package com.inho.prac02.service;
 
+import com.inho.prac02.models.ItemDto;
 import com.inho.prac02.models.Product;
 import com.inho.prac02.models.ProductMypriceRequestDto;
 import com.inho.prac02.models.ProductRepository;
@@ -20,6 +21,15 @@ public class ProductService {
                 () -> new NullPointerException("아이디가 없습니다.")
         );
         product.update(requestDto);
+        return id;
+    }
+
+    @Transactional
+    public Long updateBySearch(Long id, ItemDto itemDto){
+        Product product = productRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("아이디가 업습니다.")
+        );
+        product.updateByItemDto(itemDto);
         return id;
     }
 }
