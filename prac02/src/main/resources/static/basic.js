@@ -62,13 +62,13 @@ function addProductItem(product) {
                         ${product.title}
                     </div>
                     <div class="lprice">
-                        <span>${product.lprice}</span>원
+                        <span>${numberWithCommas(product.lprice)}</span>원
                     </div>
                     <div class="isgood ${product.lprice > product.myprice ? 'none' : ''}">
                         최저가
                     </div>
                 </div>
-            </div>`
+            </div>`;
 }
 
 function numberWithCommas(x) {
@@ -111,15 +111,15 @@ function addHTML(itemDto) {
                 <div class="search-itemDto-right">
                     <img src="images/icon-save.png" alt="" onclick='addProduct(${JSON.stringify(itemDto)})'>
                 </div>
-            </div>`
+            </div>`;
 }
 
 function addProduct(itemDto) {
     $.ajax({
         type: "POST",
         url: '/api/products',
-        contentType: "application/json",
         data: JSON.stringify(itemDto),
+        contentType: "application/json",
         success: function (response) {
             $('#container').addClass('active');
             targetId = response.id;
@@ -128,6 +128,7 @@ function addProduct(itemDto) {
 }
 
 function setMyprice() {
+
     let myprice = $('#myprice').val();
     if (myprice == '') {
         alert('올바른 가격을 입력해주세요');
@@ -142,6 +143,7 @@ function setMyprice() {
             $('#container').removeClass('active');
             alert('성공적으로 등록되었습니다.');
             window.location.reload();
+
         }
     })
 }
