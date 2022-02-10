@@ -20,4 +20,5 @@ public class SearchRequestController {
         String resultString = naverShopSearch.search(query);
         return naverShopSearch.fromJSONtoItems(resultString);
     }
+
 }
