@@ -8,5 +8,5 @@ public class ProductRequestDto {
     private String title;
     private String link;
     private String image;
-    private int price;
+    private int lprice;
 }

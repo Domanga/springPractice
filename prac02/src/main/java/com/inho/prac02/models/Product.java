@@ -34,7 +34,7 @@ public class Product extends Timestamped {
         this.title = requestDto.getTitle();
         this.image = requestDto.getImage();
         this.link = requestDto.getLink();
-        this.lprice = requestDto.getPrice();
+        this.lprice = requestDto.getLprice();
         this.myprice = 0;
     }
 

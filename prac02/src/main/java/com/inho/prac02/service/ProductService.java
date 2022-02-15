@@ -25,7 +25,7 @@ public class ProductService {
     }
 
     @Transactional
-    public Long updateBySearch(Long id, ItemDto itemDto){
+    public Long updateBySearch(Long id, ItemDto itemDto) {
         Product product = productRepository.findById(id).orElseThrow(
                 () -> new IllegalArgumentException("아이디가 업습니다.")
         );
